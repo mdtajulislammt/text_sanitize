@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Sanitizer Pro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-content">
+          <div class="logo-icon">🛡️</div>
+          <h1>Text Sanitizer Pro</h1>
+        </div>
+      </header>
+
+      <div class="tabs-container">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="sanitize">
+            <span class="tab-icon">✨</span>
+            <span>Sanitize</span>
+          </button>
+          <button class="tab-btn" data-tab="settings">
+            <span class="tab-icon">⚙️</span>
+            <span>Settings</span>
+          </button>
+        </div>
+      </div>
+
+      <main>
+        <!-- Sanitize Tab -->
+        <div id="sanitizeTab" class="tab-content active">
+          <section class="input-section">
+            <div class="section-header">
+              <label for="inputText">
+                <span class="label-icon">📝</span>
+                Input Text
+              </label>
+              <button id="pasteBtn" class="btn-link-action" type="button">📋 Paste</button>
+            </div>
+            <textarea
+              id="inputText"
+              placeholder="Paste your text containing restricted words here..."
+            ></textarea>
+            <div class="text-meta">
+              <span id="inputStats">0 words | 0 chars</span>
+            </div>
+          </section>
+
+          <section class="button-section">
+            <button id="sanitizeBtn" class="btn btn-primary">
+              <span class="btn-icon">✨</span>
+              <span>Sanitize</span>
+            </button>
+            <button id="copyBtn" class="btn btn-secondary">
+              <span class="btn-icon">📋</span>
+              <span>Copy</span>
+            </button>
+            <button id="customBtn" class="btn btn-secondary">
+              <span class="btn-icon">👋</span>
+              <span>Custom</span>
+            </button>
+            <button id="profileBtn" class="btn btn-secondary">
+              <span class="btn-icon">👤</span>
+              <span>Profile</span>
+            </button>
+            <button id="clearBtn" class="btn btn-secondary">
+              <span class="btn-icon">🗑️</span>
+              <span>Clear</span>
+            </button>
+          </section>
+
+          <section class="output-section">
+            <div class="section-header output-header">
+              <label for="outputText">
+                <span class="label-icon">✅</span>
+                Sanitized Output
+              </label>
+              <span id="statusBadge" class="status-badge"></span>
+            </div>
+            <textarea
+              id="outputText"
+              readonly
+              placeholder="Your sanitized text will appear here..."
+            ></textarea>
+            <div class="text-meta">
+              <span id="outputStats">0 words | 0 chars</span>
+            </div>
+          </section>
+        </div>
+
+        <!-- Settings Tab -->
+        <div id="settingsTab" class="tab-content">
+          <div class="settings-content">
+            <div class="word-list">
+              <div class="word-list-header">
+                <h3>
+                  <span class="section-icon">🔒</span>
+                  Restricted Words <span id="wordCountBadge" class="count-badge"></span>
+                </h3>
+                <div class="header-actions">
+                  <button id="exportWordsBtn" class="btn-action-sm" title="Export words as JSON">⬇️ Export</button>
+                  <button id="importWordsBtn" class="btn-action-sm" title="Import words from JSON">⬆️ Import</button>
+                  <input type="file" id="importFileInput" accept=".json" style="display: none;" />
+                  <button id="resetDefaultsBtn" class="btn-reset" title="Reset to original word list">🔄 Reset</button>
+                </div>
+              </div>
+              <input
+                type="text"
+                id="searchWordsInput"
+                class="search-input"
+                placeholder="🔍 Search words..."
+                autocomplete="off"
+              />
+              <div id="wordList" class="word-list-items"></div>
+            </div>
+
+            <div class="add-word-form">
+              <h3>
+                <span class="section-icon">➕</span>
+                Add New Word
+              </h3>
+              <div class="form-group">
+                <label for="newWord">Original Word</label>
+                <input
+                  type="text"
+                  id="newWord"
+                  placeholder="e.g., payment"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="form-group">
+                <label for="newReplacement">Replacement</label>
+                <input
+                  type="text"
+                  id="newReplacement"
+                  placeholder="e.g., pa_yment"
+                  autocomplete="off"
+                />
+              </div>
+              <button id="addWordBtn" class="btn btn-primary btn-full">
+                <span class="btn-icon">➕</span>
+                <span>Add Word</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome Extension",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "runtimeArgs": ["--load-extension=${workspaceFolder}"],
+      "url": "chrome://newtab",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Launch Popup",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "file:///${workspaceFolder}/popup.html",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "text-sanitizer",
+  "version": "1.1.0",
+  "description": "A Chrome Extension (Manifest V3) that sanitizes text by replacing restricted words with safe alternatives.",
+  "main": "popup.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "web-ext run --target=chromium",
+    "build": "mkdir -p dist && zip -FSr dist/text_sanitizer_pro-1.1.0.zip manifest.json background.js popup.html popup.js styles.css icon16.png icon48.png icon128.png"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sazzad-git/text_sanitizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sazzad-git/text_sanitizer/issues"
+  },
+  "homepage": "https://github.com/sazzad-git/text_sanitizer#readme",
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "web-ext": "^9.3.0"
+  }
+}
